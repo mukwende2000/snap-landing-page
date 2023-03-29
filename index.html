@@ -17,28 +17,50 @@
 <body>
 
   <header>
+  <div class="nav">
+    <div class="flex">
+      <a href="/index.html"><img src="images/logo.svg" alt="logo"></a>
+      <button class="burger">open</button>
+    </div>
     <nav>
+      <button class="close">close</button>
       <ul class="menu">
-        <li><a href="/index.html"><img src="images/logo.svg" alt="logo"></a></li>
-        <li><a href="#">Features <img src="images/icon-arrow-down.svg" alt="down arrow icon"></a></li>
-        <li><a href="#">Company <img src="images/icon-arrow-down.svg" alt="down arrow icon"></a></li>
+        <li class="dropdown">
+          <a href="#">Features <img src="images/icon-arrow-down.svg" alt="down arrow icon"></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><img src="images/icon-todo.svg" alt="todo list icon">Todo List</a></li>
+            <li><a href="#"><img src="images/icon-calendar.svg" alt="todo list icon">Calender</a></li>
+            <li><a href="#"><img src="images/icon-reminders.svg" alt="todo list icon">Reminders</a></li>
+            <li><a href="#"><img src="images/icon-planning.svg" alt="todo list icon">Planning</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Company <img src="images/icon-arrow-down.svg" alt="down arrow icon"></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">History</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </li>
         <li><a href="#">Careers</a></li>
         <li><a href="#">About</a></li>
       </ul>
       <ul class="auth">
         <li><button class="btn login">Login</button></li>
-        <li><button class="btn register"></button></li>
+        <li><button class="btn register">Register</button></li>
       </ul>
     </nav>
+  </div>
+  <div class="hero flex">
     <section class="sec-1">
-      <h1>Make remote work</h1>
-      <p>
+      <h1 class="txt-center">Make remote work</h1>
+      <p class="txt-center">
         Get your team in sync, no matter your location.
         Streamline processes, create team rituals, and
         watch productivity soar.
       </p>
-      <button class="btn">Learn more</button>
-      <div>
+      <button class="btn learn">Learn more</button>
+      <div class="flex clients">
         <img src="images/client-databiz.svg" alt="databiz logo">
         <img src="images/client-audiophile.svg" alt="audiophile logo">
         <img src="images/client-meet.svg" alt="meet logo">
@@ -48,12 +70,28 @@
     <section class="sec-2">
       <img src="images/image-hero-mobile.png" alt="hero image">
     </section>
+  </div>
   </header>
   <footer>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Mukwende</a>.
     </div>
 </footer>  
+<script>
+  const burger = document.querySelector('.burger')
+  const closeBtn = document.querySelector('.close')
+  const nav = document.querySelector('nav')
+  const dropdowns = document.querySelectorAll('.dropdown')
+  const dropdownMenus = document.querySelectorAll('.dropdown-menu')
+  burger.addEventListener('click', () => nav.classList.add('active'))
+  closeBtn.addEventListener('click', () => nav.classList.remove('active'))
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', (e) => {
+      e.preventDefault()
+      dropdown.children[1].classList.toggle('collapse')
+    })
+  })
+</script>
 </body>
 </html>

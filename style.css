@@ -1,0 +1,161 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.flex {
+    display: flex;
+}
+.txt-center {
+    text-align: center;
+}
+a {
+    color: grey;
+    text-decoration: none;
+    transform: all .4s;
+}
+li {
+    list-style: none;
+}
+button {
+    border: none;
+    cursor: pointer;
+}
+.btn {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: auto;
+    display: block;
+    border-radius: 10px;
+    padding: .7rem 1.5rem;
+    transition: all .4s;
+    color: grey;
+
+}
+
+.nav div {
+    justify-content: space-between;
+}
+header div:nth-child(2) {
+    flex-direction: column-reverse;
+}
+.nav {
+    padding: 2rem;
+}
+nav {
+    position: fixed;
+    background-color: #fff;
+    padding: 2rem;
+    right: -60vw;
+    /* height: 100vh; */
+    bottom: 0;
+    top: 0;
+    width: 60vw;
+    transition: right .4s;
+}
+.active {
+    right: 0;    
+}
+.close {
+    top: -20px;
+}
+.burger, .close {
+    position: relative;
+    text-indent: 30px;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    background-color: inherit;
+}
+.burger::before,
+.close::before {
+    text-indent: 0;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.burger::before {
+    content: '\2630';
+}
+.close::before {
+    content: '\00D7';
+}
+.menu > li {
+    margin-block: 1rem;
+    font-size: 1rem;
+}
+.dropdown {
+    position: relative;
+}
+.menu > li a {
+    transition: all .5s;
+}
+.menu > li a:hover, .login:hover {
+    color: #000;
+}
+.dropdown-menu {
+    /* position: absolute; */
+    /* top: 3em; */
+    left: 1em;
+    display: none;
+}
+.collapse {
+    display: block;
+}
+.dropdown-menu li {
+    margin: 1.3rem;
+}
+.dropdown img {
+    display: inline-block;
+}
+.dropdown-menu img {
+    display: inline-block;
+    margin-right: 1rem;
+}
+.login {
+    background-color: transparent;
+}
+.register {
+    border: 2px solid lightgrey;
+    background-color: transparent;
+    transition: all .4s;
+    width: 100%;
+}
+.register:hover {
+    color: #000;
+    border-color: #000;
+}
+.sec-1 {
+    margin-top: 2rem;
+    padding: 1rem;
+}
+header h1 {
+    margin: 1rem 0;
+    font-size: 32px;
+}
+header p {
+    line-height: 1.5rem;
+    color: grey;
+}
+.learn {
+    background-color: #000;
+    outline: 2px solid #000;
+    color: #fff;
+    margin: 2rem auto;
+}
+.learn:hover {
+    background-color: #fff;
+    color: #000;
+}
