@@ -1,4 +1,6 @@
-
+:root {
+    font-size: 18px;
+}
 *,
 *::before,
 *::after {
@@ -83,7 +85,7 @@ nav {
     text-indent: 0;
     font-size: 2rem;
     position: absolute;
-    top: 0;
+    top: -5px;
     left: 0;
 }
 .burger::before {
@@ -95,6 +97,8 @@ nav {
 .menu > li {
     margin-block: 1rem;
     font-size: 1rem;
+    color: grey;
+    cursor: pointer;
 }
 .dropdown {
     position: relative;
@@ -102,7 +106,7 @@ nav {
 .menu > li a {
     transition: all .5s;
 }
-.menu > li a:hover, .login:hover {
+.menu li a:hover, .login:hover {
     color: #000;
 }
 .dropdown-menu {
@@ -111,9 +115,7 @@ nav {
     left: 1em;
     display: none;
 }
-.collapse {
-    display: block;
-}
+
 .dropdown-menu li {
     margin: 1.3rem;
 }
@@ -139,14 +141,14 @@ nav {
 }
 .sec-1 {
     margin-top: 2rem;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 header h1 {
     margin: 1rem 0;
     font-size: 32px;
 }
 header p {
-    line-height: 1.5rem;
+    line-height: 1.9rem;
     color: grey;
 }
 .learn {
@@ -158,4 +160,83 @@ header p {
 .learn:hover {
     background-color: #fff;
     color: #000;
+}
+.clients {
+    justify-content: space-between;
+}
+.clients img {
+    height: 20px;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    /* z-index: -1; */
+}
+.show {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    header div:nth-child(2) {
+        flex-direction: row;   
+        gap: 5rem;     
+        padding: 5rem;
+    }
+    header h1 {
+        font-size: 4rem;
+    }
+    .sec-1 {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .sec-1 p {
+        font-size: 1.5rem;
+    }
+    .txt-center {
+        text-align: left;        
+    }
+    .learn {
+        margin: 0;
+        width: 200px;
+    }
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .burger, .close {
+        display: none;
+    }
+    nav {
+        position: static;
+        display: flex;
+        justify-content: space-between;
+        flex-basis: 100%;
+    }
+    nav > ul {
+        display: flex;
+    }
+    .dropdown {
+        position: relative;
+    }
+    .dropdown-menu {
+        width: 220px;
+        position: absolute;
+        left: -100px;
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 7px;
+        box-shadow: 8px 8px 45px  -4px rgba(0, 0, 0, .5);
+    }
+    nav > ul > li {
+        margin: 0 1rem;
+    }
 }
